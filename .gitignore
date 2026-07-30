@@ -1,0 +1,20 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local data, model caches, and training outputs
+data/
+checkpoints/
+artifacts/models/
+.cache/
+
+# Environment files and local IDE settings
+.env
+.vscode/
+.idea/
+
+*.egg-info/
+*.egg-info/

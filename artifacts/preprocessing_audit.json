@@ -1,0 +1,83 @@
+{
+  "criteria_without_entities_count": 1499,
+  "criterion_count": 12409,
+  "criterion_id_unique_count": 12409,
+  "entity_count_after_overlap_resolution": 32434,
+  "entity_count_before_overlap_resolution": 34396,
+  "entity_type_counts": {
+    "Condition": 11150,
+    "Device": 353,
+    "Drug": 3586,
+    "Measurement": 3183,
+    "Mood": 604,
+    "Observation": 1125,
+    "Person": 1595,
+    "Pregnancy_considerations": 190,
+    "Procedure": 3239,
+    "Temporal": 3510,
+    "Value": 3899
+  },
+  "nct_leakage_count": 0,
+  "published_code_compatible_entity_count": 31996,
+  "published_paper_entity_count": 31944,
+  "remaining_overlapping_entity_pair_count": 0,
+  "removed_overlapping_entity_count": 1962,
+  "seed": 42,
+  "splits": {
+    "test": {
+      "criterion_count": 1310,
+      "entity_count": 3524,
+      "nct_id_count": 100
+    },
+    "train": {
+      "criterion_count": 9806,
+      "entity_count": 25625,
+      "nct_id_count": 800
+    },
+    "validation": {
+      "criterion_count": 1293,
+      "entity_count": 3285,
+      "nct_id_count": 100
+    }
+  },
+  "tokenization": {
+    "aligned_criterion_count": 12409,
+    "alignment_error_count": 0,
+    "bio_label_counts": {
+      "B-Condition": 11805,
+      "B-Device": 378,
+      "B-Drug": 3665,
+      "B-Measurement": 3285,
+      "B-Mood": 612,
+      "B-Observation": 1212,
+      "B-Person": 1598,
+      "B-Pregnancy_considerations": 190,
+      "B-Procedure": 3377,
+      "B-Temporal": 3560,
+      "B-Value": 4019,
+      "I-Condition": 27237,
+      "I-Device": 1038,
+      "I-Drug": 11151,
+      "I-Measurement": 10080,
+      "I-Mood": 503,
+      "I-Observation": 2597,
+      "I-Person": 269,
+      "I-Pregnancy_considerations": 4974,
+      "I-Procedure": 8163,
+      "I-Temporal": 9560,
+      "I-Value": 12591,
+      "O": 109386
+    },
+    "criteria_over_128_tokens": 48,
+    "criteria_over_256_tokens": 5,
+    "maximum_token_count": 507,
+    "median_token_count": 15,
+    "minimum_token_count": 3,
+    "p95_token_count": 56,
+    "p99_token_count": 96,
+    "tokenizer_class": "BertTokenizer",
+    "tokenizer_is_fast": true,
+    "tokenizer_name": "distilbert-base-uncased",
+    "tokenizer_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be"
+  }
+}
