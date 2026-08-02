@@ -189,16 +189,43 @@ DistilBERT token audit показа median 15, p95 56, p99 96 и максиму�
 
 ### 7.1. CRF baseline
 
-CRF ще използва локални token характеристики:
+Реализираният CRF използва regex tokenization и локални характеристики:
 
 - lowercase форма;
-- prefix и suffix;
-- главни букви и цифри;
-- пунктуация;
-- характеристики на съседните tokens.
+- prefixes и suffixes с дължина 2 и 3;
+- token shape, дължина, главни букви и цифри;
+- начална и крайна позиция в criterion;
+- lowercase, shape, title case и uppercase характеристики на предходния и
+  следващия token.
 
 Това е класически sequence-labeling baseline. Той показва какво може да се
 постигне с ръчно зададени локални зависимости без Transformer.
+
+Преди пълното обучение беше изпълнен smoke test с 300 training criteria и 10
+L-BFGS итерации. Той потвърди, че feature extraction, BIO prediction,
+entity-level evaluation и strict/relaxed quality checks работят от край до
+край.
+
+Пълният модел беше обучен само върху 800-те training NCT IDs: 9 806 criteria и
+141 141 regex tokens. Използваните фиксирани настройки са `c1=0.1`, `c2=0.1`,
+100 L-BFGS итерации и `all_possible_transitions=True`. Не е правено настройване
+по test резултата.
+
+Резултати:
+
+- validation strict precision `0.6710`, recall `0.6008`, F1 `0.6339`;
+- validation relaxed precision `0.7980`, recall `0.7145`, F1 `0.7540`;
+- test strict precision `0.6343`, recall `0.5486`, F1 `0.5884`;
+- test relaxed precision `0.7844`, recall `0.6783`, F1 `0.7275`;
+- test strict F1 по criteria type: `0.6167` за exclusion и `0.5410` за
+  inclusion.
+
+Обучението на CPU отне приблизително 82.1 секунди. Pickle моделът е около 3.27
+MB и се записва в Git-ignored `checkpoints/crf_baseline.pkl`. Подробният JSON
+отчет с резултати по entity type е в
+`artifacts/crf_baseline_metrics.json`. Най-силните test strict резултати са за
+`Person` и `Value`, а редките или по-нееднозначни `Device`, `Mood`,
+`Observation` и `Pregnancy_considerations` остават значително по-трудни.
 
 ### 7.2. DistilBERT
 

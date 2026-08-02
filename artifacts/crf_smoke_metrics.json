@@ -1,0 +1,1262 @@
+{
+  "algorithm": "lbfgs",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",
+    "python": "3.11.9",
+    "python_crfsuite": "0.9.12",
+    "sklearn_crfsuite": "0.5.0"
+  },
+  "hyperparameters": {
+    "all_possible_transitions": true,
+    "c1": 0.1,
+    "c2": 0.1,
+    "max_iterations": 10
+  },
+  "model": "linear_chain_crf",
+  "model_output": null,
+  "model_size_bytes": null,
+  "model_state_feature_count": 11337,
+  "model_transition_feature_count": 396,
+  "prediction_seconds": {
+    "test": 0.04812220006715506,
+    "validation": 0.06006369995884597
+  },
+  "results": {
+    "test": {
+      "by_criteria_type": {
+        "exclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.23376623376623376,
+                "fn": 56,
+                "fp": 62,
+                "precision": 0.225,
+                "recall": 0.24324324324324326,
+                "tp": 18
+              },
+              "strict": {
+                "f1": 0.11688311688311688,
+                "fn": 65,
+                "fp": 71,
+                "precision": 0.1125,
+                "recall": 0.12162162162162163,
+                "tp": 9
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 1,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 1,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 24,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 24,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 18,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 18,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 42,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 42,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.1258741258741259,
+            "fn": 188,
+            "fp": 62,
+            "precision": 0.225,
+            "recall": 0.08737864077669903,
+            "tp": 18
+          },
+          "strict": {
+            "f1": 0.06293706293706294,
+            "fn": 197,
+            "fp": 71,
+            "precision": 0.1125,
+            "recall": 0.043689320388349516,
+            "tp": 9
+          }
+        },
+        "inclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.25287356321839083,
+                "fn": 25,
+                "fp": 40,
+                "precision": 0.21568627450980393,
+                "recall": 0.3055555555555556,
+                "tp": 11
+              },
+              "strict": {
+                "f1": 0.13793103448275862,
+                "fn": 30,
+                "fp": 45,
+                "precision": 0.11764705882352941,
+                "recall": 0.16666666666666666,
+                "tp": 6
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 9,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 9,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 15,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 15,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 26,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 26,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 19,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.12021857923497267,
+            "fn": 121,
+            "fp": 40,
+            "precision": 0.21568627450980393,
+            "recall": 0.08333333333333333,
+            "tp": 11
+          },
+          "strict": {
+            "f1": 0.06557377049180328,
+            "fn": 126,
+            "fp": 45,
+            "precision": 0.11764705882352941,
+            "recall": 0.045454545454545456,
+            "tp": 6
+          }
+        }
+      },
+      "per_type": {
+        "Condition": {
+          "relaxed": {
+            "f1": 0.24066390041493776,
+            "fn": 81,
+            "fp": 102,
+            "precision": 0.22137404580152673,
+            "recall": 0.2636363636363636,
+            "tp": 29
+          },
+          "strict": {
+            "f1": 0.12448132780082988,
+            "fn": 95,
+            "fp": 116,
+            "precision": 0.11450381679389313,
+            "recall": 0.13636363636363635,
+            "tp": 15
+          }
+        },
+        "Device": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 4,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 4,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Drug": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 26,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 26,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Measurement": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Mood": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 5,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 5,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Observation": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 10,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 10,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Person": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 17,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 17,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Procedure": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 44,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 44,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Temporal": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 61,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 61,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Value": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 33,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 33,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        }
+      },
+      "relaxed": {
+        "f1": 0.12366737739872066,
+        "fn": 309,
+        "fp": 102,
+        "precision": 0.22137404580152673,
+        "recall": 0.08579881656804733,
+        "tp": 29
+      },
+      "strict": {
+        "f1": 0.06396588486140724,
+        "fn": 323,
+        "fp": 116,
+        "precision": 0.11450381679389313,
+        "recall": 0.04437869822485207,
+        "tp": 15
+      }
+    },
+    "validation": {
+      "by_criteria_type": {
+        "exclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.36,
+                "fn": 42,
+                "fp": 54,
+                "precision": 0.3333333333333333,
+                "recall": 0.391304347826087,
+                "tp": 27
+              },
+              "strict": {
+                "f1": 0.14666666666666667,
+                "fn": 58,
+                "fp": 70,
+                "precision": 0.13580246913580246,
+                "recall": 0.15942028985507245,
+                "tp": 11
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 23,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 23,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 12,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 12,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 4,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 4,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 3,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 11,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 11,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 18,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 18,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.22784810126582278,
+            "fn": 129,
+            "fp": 54,
+            "precision": 0.3333333333333333,
+            "recall": 0.17307692307692307,
+            "tp": 27
+          },
+          "strict": {
+            "f1": 0.09282700421940929,
+            "fn": 145,
+            "fp": 70,
+            "precision": 0.13580246913580246,
+            "recall": 0.07051282051282051,
+            "tp": 11
+          }
+        },
+        "inclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.29411764705882354,
+                "fn": 13,
+                "fp": 35,
+                "precision": 0.2222222222222222,
+                "recall": 0.43478260869565216,
+                "tp": 10
+              },
+              "strict": {
+                "f1": 0.2058823529411765,
+                "fn": 16,
+                "fp": 38,
+                "precision": 0.15555555555555556,
+                "recall": 0.30434782608695654,
+                "tp": 7
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 5,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 32,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 32,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 10,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 10,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 14,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Pregnancy_considerations": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 2,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 16,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 16,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 8,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 8,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.0,
+                "fn": 37,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 37,
+                "fp": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.10309278350515463,
+            "fn": 139,
+            "fp": 35,
+            "precision": 0.2222222222222222,
+            "recall": 0.06711409395973154,
+            "tp": 10
+          },
+          "strict": {
+            "f1": 0.07216494845360825,
+            "fn": 142,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 0.04697986577181208,
+            "tp": 7
+          }
+        }
+      },
+      "per_type": {
+        "Condition": {
+          "relaxed": {
+            "f1": 0.33944954128440363,
+            "fn": 55,
+            "fp": 89,
+            "precision": 0.29365079365079366,
+            "recall": 0.40217391304347827,
+            "tp": 37
+          },
+          "strict": {
+            "f1": 0.16513761467889906,
+            "fn": 74,
+            "fp": 108,
+            "precision": 0.14285714285714285,
+            "recall": 0.1956521739130435,
+            "tp": 18
+          }
+        },
+        "Drug": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Measurement": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 44,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 44,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Mood": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 6,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 6,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Observation": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Person": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 16,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 16,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Pregnancy_considerations": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 2,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 2,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Procedure": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 27,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 27,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Temporal": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 26,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 26,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Value": {
+          "relaxed": {
+            "f1": 0.0,
+            "fn": 51,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 51,
+            "fp": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        }
+      },
+      "relaxed": {
+        "f1": 0.17169373549883993,
+        "fn": 268,
+        "fp": 89,
+        "precision": 0.29365079365079366,
+        "recall": 0.12131147540983607,
+        "tp": 37
+      },
+      "strict": {
+        "f1": 0.08352668213457078,
+        "fn": 287,
+        "fp": 108,
+        "precision": 0.14285714285714285,
+        "recall": 0.05901639344262295,
+        "tp": 18
+      }
+    }
+  },
+  "run_type": "smoke",
+  "split_seed": 42,
+  "split_sizes": {
+    "test": {
+      "available_criterion_count": 1310,
+      "available_nct_id_count": 100,
+      "used_criterion_count": 100,
+      "used_nct_id_count": 8,
+      "used_token_count": 2006
+    },
+    "train": {
+      "available_criterion_count": 9806,
+      "available_nct_id_count": 800,
+      "used_criterion_count": 300,
+      "used_nct_id_count": 24,
+      "used_token_count": 5740
+    },
+    "validation": {
+      "available_criterion_count": 1293,
+      "available_nct_id_count": 100,
+      "used_criterion_count": 100,
+      "used_nct_id_count": 7,
+      "used_token_count": 1624
+    }
+  },
+  "training_label_count": 20,
+  "training_labels": [
+    "B-Condition",
+    "B-Device",
+    "B-Drug",
+    "B-Measurement",
+    "B-Mood",
+    "B-Observation",
+    "B-Person",
+    "B-Procedure",
+    "B-Temporal",
+    "B-Value",
+    "I-Condition",
+    "I-Drug",
+    "I-Measurement",
+    "I-Mood",
+    "I-Observation",
+    "I-Person",
+    "I-Procedure",
+    "I-Temporal",
+    "I-Value",
+    "O"
+  ],
+  "training_seconds": 0.544455699971877
+}

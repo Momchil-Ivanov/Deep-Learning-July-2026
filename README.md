@@ -111,11 +111,18 @@ $env:PYTHONPATH="src"
 $env:PYTHONUTF8="1"
 python scripts\audit_chia.py --output artifacts\chia_audit.json
 python scripts\prepare_chia.py
+python scripts\train_crf.py --smoke-test
+python scripts\train_crf.py
 ```
 
 `PYTHONUTF8` is required in the current workspace because its Windows path
 contains Unicode characters that cannot be represented by the default CP1251
 encoding.
+
+The smoke command uses 300 training criteria and 10 L-BFGS iterations. The full
+command uses the locked 800-trial training split and writes reproducible metrics
+to `artifacts/crf_baseline_metrics.json`. The serialized model is written to
+`checkpoints/crf_baseline.pkl`, which is intentionally ignored by Git.
 
 ## Repository structure
 
@@ -126,9 +133,13 @@ encoding.
 │   └── PROJECT_DESIGN_BG.md   # Detailed Bulgarian design explanation
 ├── scripts/
 │   ├── audit_chia.py           # Reproducible data-quality audit
-│   └── prepare_chia.py         # Split, overlap, and BIO quality gate
+│   ├── prepare_chia.py         # Split, overlap, and BIO quality gate
+│   └── train_crf.py            # CRF smoke/full training and evaluation
 ├── src/
-│   └── trial_criteria_ner/    # Reusable Python package
+│   └── trial_criteria_ner/
+│       ├── baseline.py         # CRF features and entity-level metrics
+│       ├── data.py             # CHIA download, parsing, and audit
+│       └── preprocessing.py    # Splits, overlap policy, and BIO alignment
 ├── tests/                     # Unit and data-integrity tests
 ├── .gitignore
 ├── pyproject.toml
@@ -136,8 +147,8 @@ encoding.
 └── requirements.txt
 ```
 
-The Jupyter notebook, BIO pipeline, models, and evaluation code will be added
-incrementally after their quality gates pass.
+The DistilBERT model and final experiment notebook will be added incrementally
+after their quality gates pass.
 
 ## Current status
 
@@ -174,6 +185,19 @@ Stage 4 is complete:
 
 The preprocessing report is stored in
 [`artifacts/preprocessing_audit.json`](artifacts/preprocessing_audit.json).
+
+Stage 5 is complete:
+
+- linear-chain CRF trained on all 9,806 training criteria using 141,141 tokens;
+- L-BFGS with `c1=0.1`, `c2=0.1`, 100 iterations, and all possible transitions;
+- test strict precision `0.6343`, recall `0.5486`, and F1 `0.5884`;
+- test relaxed precision `0.7844`, recall `0.6783`, and F1 `0.7275`;
+- test strict F1 is `0.6167` for exclusion and `0.5410` for inclusion criteria;
+- training took approximately 82.1 seconds on CPU;
+- the serialized CRF is approximately 3.27 MB.
+
+The complete per-class baseline report is stored in
+[`artifacts/crf_baseline_metrics.json`](artifacts/crf_baseline_metrics.json).
 
 ## Documentation
 
