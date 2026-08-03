@@ -238,6 +238,8 @@ Pipeline:
 5. Cross-entropy loss обучава модела; padding и special tokens получават label
    `-100` и не участват в loss.
 6. Предсказаните BIO етикети се сглобяват обратно в текстови spans.
+7. Criteria над `max_length=128` се пазят чрез overflowing windows със
+   `stride=0`, вместо тихо изрязване.
 
 Началните настройки за 4 GB VRAM са:
 
@@ -253,6 +255,21 @@ Pipeline:
 
 FP16 ще се използва само ако кратък benchmark покаже стабилност и полза. GTX
 1050 Ti няма Tensor Cores, затова FP16 не е автоматично по-бърз.
+
+Stage 6 smoke test върху CUDA потвърди pipeline-а преди пълното обучение:
+
+- 64 train и 32 validation criteria; locked test set не е използван;
+- 3 AdamW стъпки с batch size 1 и gradient accumulation 4;
+- loss: `3.106 → 2.984 → 2.817`;
+- peak allocated VRAM около `1.29 GB`;
+- checkpoint reload logit difference `0.0`;
+- след resume параметрите се променят и training state се възстановява;
+- пълният train split дава `9 856` windows и `42` overflow criteria;
+- smoke validation F1 е нисък по дизайн (`strict 0.0208`), защото целта е
+  коректност на pipeline-а, не краен резултат.
+
+Отчетът е в `artifacts/distilbert_smoke_metrics.json`. Checkpoints са в
+Git-ignored `checkpoints/distilbert-smoke/`.
 
 ## 8. Поетапна работа и quality gates
 

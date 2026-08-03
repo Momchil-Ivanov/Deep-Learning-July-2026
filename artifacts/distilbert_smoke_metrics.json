@@ -1,0 +1,431 @@
+{
+  "checkpoint_resume": {
+    "loaded_global_step": 2,
+    "maximum_reload_logit_difference": 0.0,
+    "parameters_changed_after_resume": true,
+    "resumed_global_step": 3,
+    "saved_global_step": 2,
+    "step_three_directory": "checkpoints\\distilbert-smoke\\step-3",
+    "step_two_directory": "checkpoints\\distilbert-smoke\\step-2"
+  },
+  "device": {
+    "compute_capability": [
+      6,
+      1
+    ],
+    "name": "NVIDIA GeForce GTX 1050 Ti",
+    "total_memory_bytes": 4294705152,
+    "type": "cuda"
+  },
+  "environment": {
+    "cuda": "12.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "torch": "2.13.0+cu126"
+  },
+  "full_split_window_audit": {
+    "train": {
+      "bio_label_counts": {
+        "B-Condition": 9390,
+        "B-Device": 307,
+        "B-Drug": 2885,
+        "B-Measurement": 2612,
+        "B-Mood": 462,
+        "B-Observation": 957,
+        "B-Person": 1228,
+        "B-Pregnancy_considerations": 151,
+        "B-Procedure": 2648,
+        "B-Temporal": 2799,
+        "B-Value": 3210,
+        "I-Condition": 21764,
+        "I-Device": 848,
+        "I-Drug": 8873,
+        "I-Measurement": 8070,
+        "I-Mood": 395,
+        "I-Observation": 2029,
+        "I-Person": 207,
+        "I-Pregnancy_considerations": 3651,
+        "I-Procedure": 6489,
+        "I-Temporal": 7398,
+        "I-Value": 10060,
+        "O": 86166
+      },
+      "criterion_count": 9806,
+      "ignored_special_token_count": 19712,
+      "maximum_window_length": 128,
+      "maximum_windows_per_criterion": 5,
+      "overflow_criterion_count": 42,
+      "supervised_token_count": 182599,
+      "window_count": 9856
+    },
+    "validation": {
+      "bio_label_counts": {
+        "B-Condition": 1140,
+        "B-Device": 48,
+        "B-Drug": 387,
+        "B-Measurement": 320,
+        "B-Mood": 87,
+        "B-Observation": 124,
+        "B-Person": 184,
+        "B-Pregnancy_considerations": 25,
+        "B-Procedure": 359,
+        "B-Temporal": 305,
+        "B-Value": 407,
+        "I-Condition": 2611,
+        "I-Device": 143,
+        "I-Drug": 1164,
+        "I-Measurement": 883,
+        "I-Mood": 61,
+        "I-Observation": 252,
+        "I-Person": 36,
+        "I-Pregnancy_considerations": 793,
+        "I-Procedure": 859,
+        "I-Temporal": 804,
+        "I-Value": 1315,
+        "O": 10285
+      },
+      "criterion_count": 1293,
+      "ignored_special_token_count": 2592,
+      "maximum_window_length": 128,
+      "maximum_windows_per_criterion": 2,
+      "overflow_criterion_count": 3,
+      "supervised_token_count": 22592,
+      "window_count": 1296
+    }
+  },
+  "label_count": 23,
+  "labels": [
+    "O",
+    "B-Condition",
+    "B-Device",
+    "B-Drug",
+    "B-Measurement",
+    "B-Mood",
+    "B-Observation",
+    "B-Person",
+    "B-Pregnancy_considerations",
+    "B-Procedure",
+    "B-Temporal",
+    "B-Value",
+    "I-Condition",
+    "I-Device",
+    "I-Drug",
+    "I-Measurement",
+    "I-Mood",
+    "I-Observation",
+    "I-Person",
+    "I-Pregnancy_considerations",
+    "I-Procedure",
+    "I-Temporal",
+    "I-Value"
+  ],
+  "max_length": 128,
+  "model_name": "distilbert-base-uncased",
+  "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "run_type": "distilbert_smoke",
+  "seed": 42,
+  "smoke_subset": {
+    "train_criteria_count": 64,
+    "train_window_audit": {
+      "bio_label_counts": {
+        "B-Condition": 71,
+        "B-Device": 4,
+        "B-Drug": 18,
+        "B-Measurement": 29,
+        "B-Mood": 3,
+        "B-Observation": 12,
+        "B-Person": 4,
+        "B-Pregnancy_considerations": 1,
+        "B-Procedure": 18,
+        "B-Temporal": 31,
+        "B-Value": 35,
+        "I-Condition": 194,
+        "I-Device": 3,
+        "I-Drug": 57,
+        "I-Measurement": 80,
+        "I-Mood": 11,
+        "I-Observation": 28,
+        "I-Pregnancy_considerations": 25,
+        "I-Procedure": 36,
+        "I-Temporal": 94,
+        "I-Value": 92,
+        "O": 763
+      },
+      "criterion_count": 64,
+      "ignored_special_token_count": 130,
+      "maximum_window_length": 128,
+      "maximum_windows_per_criterion": 2,
+      "overflow_criterion_count": 1,
+      "supervised_token_count": 1609,
+      "window_count": 65
+    },
+    "validation_criteria_count": 32,
+    "validation_window_audit": {
+      "bio_label_counts": {
+        "B-Condition": 38,
+        "B-Drug": 14,
+        "B-Measurement": 7,
+        "B-Observation": 10,
+        "B-Person": 3,
+        "B-Procedure": 8,
+        "B-Temporal": 6,
+        "B-Value": 11,
+        "I-Condition": 72,
+        "I-Drug": 40,
+        "I-Measurement": 15,
+        "I-Observation": 27,
+        "I-Procedure": 39,
+        "I-Temporal": 29,
+        "I-Value": 37,
+        "O": 326
+      },
+      "criterion_count": 32,
+      "ignored_special_token_count": 64,
+      "maximum_window_length": 65,
+      "maximum_windows_per_criterion": 1,
+      "overflow_criterion_count": 0,
+      "supervised_token_count": 682,
+      "window_count": 32
+    }
+  },
+  "split_seed": 42,
+  "test_split_used": false,
+  "tokenization_seconds": 4.469627299928106,
+  "tokenizer_class": "BertTokenizer",
+  "tokenizer_is_fast": true,
+  "training": {
+    "batch_size": 1,
+    "effective_batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 2e-05,
+    "losses": [
+      3.1063034534454346,
+      2.9842259287834167,
+      2.8170942068099976
+    ],
+    "maximum_allocated_bytes": 1349851648,
+    "maximum_reserved_bytes": 1459617792,
+    "optimizer_steps": 3,
+    "precision": "float32",
+    "seconds": 27.530023399973288,
+    "weight_decay": 0.01
+  },
+  "validation_metrics": {
+    "per_type": {
+      "Condition": {
+        "relaxed": {
+          "f1": 0.38983050847457623,
+          "fn": 15,
+          "fp": 57,
+          "precision": 0.2875,
+          "recall": 0.6052631578947368,
+          "tp": 23
+        },
+        "strict": {
+          "f1": 0.01694915254237288,
+          "fn": 37,
+          "fp": 79,
+          "precision": 0.0125,
+          "recall": 0.02631578947368421,
+          "tp": 1
+        }
+      },
+      "Device": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Drug": {
+        "relaxed": {
+          "f1": 0.17777777777777778,
+          "fn": 10,
+          "fp": 27,
+          "precision": 0.12903225806451613,
+          "recall": 0.2857142857142857,
+          "tp": 4
+        },
+        "strict": {
+          "f1": 0.044444444444444446,
+          "fn": 13,
+          "fp": 30,
+          "precision": 0.03225806451612903,
+          "recall": 0.07142857142857142,
+          "tp": 1
+        }
+      },
+      "Measurement": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 7,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 7,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Mood": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Observation": {
+        "relaxed": {
+          "f1": 0.13559322033898302,
+          "fn": 6,
+          "fp": 45,
+          "precision": 0.08163265306122448,
+          "recall": 0.4,
+          "tp": 4
+        },
+        "strict": {
+          "f1": 0.033898305084745756,
+          "fn": 9,
+          "fp": 48,
+          "precision": 0.02040816326530612,
+          "recall": 0.1,
+          "tp": 1
+        }
+      },
+      "Person": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 3,
+          "fp": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 3,
+          "fp": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Pregnancy_considerations": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Procedure": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 8,
+          "fp": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 8,
+          "fp": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Temporal": {
+        "relaxed": {
+          "f1": 0.0,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      },
+      "Value": {
+        "relaxed": {
+          "f1": 0.23529411764705885,
+          "fn": 9,
+          "fp": 4,
+          "precision": 0.3333333333333333,
+          "recall": 0.18181818181818182,
+          "tp": 2
+        },
+        "strict": {
+          "f1": 0.0,
+          "fn": 11,
+          "fp": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0
+        }
+      }
+    },
+    "relaxed": {
+      "f1": 0.22837370242214533,
+      "fn": 64,
+      "fp": 159,
+      "precision": 0.171875,
+      "recall": 0.3402061855670103,
+      "tp": 33
+    },
+    "strict": {
+      "f1": 0.020761245674740483,
+      "fn": 94,
+      "fp": 189,
+      "precision": 0.015625,
+      "recall": 0.030927835051546393,
+      "tp": 3
+    }
+  }
+}

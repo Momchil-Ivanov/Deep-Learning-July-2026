@@ -113,16 +113,22 @@ python scripts\audit_chia.py --output artifacts\chia_audit.json
 python scripts\prepare_chia.py
 python scripts\train_crf.py --smoke-test
 python scripts\train_crf.py
+python scripts\smoke_distilbert.py
 ```
 
 `PYTHONUTF8` is required in the current workspace because its Windows path
 contains Unicode characters that cannot be represented by the default CP1251
 encoding.
 
-The smoke command uses 300 training criteria and 10 L-BFGS iterations. The full
-command uses the locked 800-trial training split and writes reproducible metrics
-to `artifacts/crf_baseline_metrics.json`. The serialized model is written to
-`checkpoints/crf_baseline.pkl`, which is intentionally ignored by Git.
+The CRF smoke command uses 300 training criteria and 10 L-BFGS iterations. The
+full CRF command uses the locked 800-trial training split and writes
+reproducible metrics to `artifacts/crf_baseline_metrics.json`. The serialized
+model is written to `checkpoints/crf_baseline.pkl`, which is intentionally
+ignored by Git.
+
+`smoke_distilbert.py` is a CUDA quality gate: 64 train / 32 validation criteria,
+3 AdamW optimizer steps with gradient accumulation 4, checkpoint save/load, and
+resume for one additional step. It does not use the locked test set.
 
 ## Repository structure
 
@@ -134,12 +140,14 @@ to `artifacts/crf_baseline_metrics.json`. The serialized model is written to
 ├── scripts/
 │   ├── audit_chia.py           # Reproducible data-quality audit
 │   ├── prepare_chia.py         # Split, overlap, and BIO quality gate
-│   └── train_crf.py            # CRF smoke/full training and evaluation
+│   ├── train_crf.py            # CRF smoke/full training and evaluation
+│   └── smoke_distilbert.py     # DistilBERT CUDA / resume quality gate
 ├── src/
 │   └── trial_criteria_ner/
 │       ├── baseline.py         # CRF features and entity-level metrics
 │       ├── data.py             # CHIA download, parsing, and audit
-│       └── preprocessing.py    # Splits, overlap policy, and BIO alignment
+│       ├── preprocessing.py    # Splits, overlap policy, and BIO alignment
+│       └── transformer_data.py # Windowed DistilBERT BIO inputs
 ├── tests/                     # Unit and data-integrity tests
 ├── .gitignore
 ├── pyproject.toml
@@ -147,8 +155,7 @@ to `artifacts/crf_baseline_metrics.json`. The serialized model is written to
 └── requirements.txt
 ```
 
-The DistilBERT model and final experiment notebook will be added incrementally
-after their quality gates pass.
+Full DistilBERT training and the experiment notebook follow after Stage 6.
 
 ## Current status
 
@@ -198,6 +205,20 @@ Stage 5 is complete:
 
 The complete per-class baseline report is stored in
 [`artifacts/crf_baseline_metrics.json`](artifacts/crf_baseline_metrics.json).
+
+Stage 6 is complete:
+
+- windowed DistilBERT BIO dataset retains all overflow windows (`stride=0`);
+- special tokens and padding use label `-100` and are excluded from the loss;
+- CUDA smoke on GTX 1050 Ti: losses `3.106 → 2.984 → 2.817` over 3 steps;
+- peak allocated VRAM about `1.29 GB` (float32, batch size 1, accum 4);
+- checkpoint reload logit difference `0.0`; resume continues and changes weights;
+- smoke validation F1 remains low by design (`strict 0.0208`, `relaxed 0.2284`);
+- full train split yields `9,856` windows with `42` overflow criteria;
+- the locked test set was not used.
+
+The smoke report is stored in
+[`artifacts/distilbert_smoke_metrics.json`](artifacts/distilbert_smoke_metrics.json).
 
 ## Documentation
 
