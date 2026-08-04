@@ -271,6 +271,31 @@ Stage 6 smoke test върху CUDA потвърди pipeline-а преди пъ�
 Отчетът е в `artifacts/distilbert_smoke_metrics.json`. Checkpoints са в
 Git-ignored `checkpoints/distilbert-smoke/`.
 
+Пълното обучение (Stage 7) използва същите locked train/validation splits и
+float32 настройки, подходящи за GTX 1050 Ti:
+
+- batch size 1, gradient accumulation 16 (effective batch 16);
+- AdamW `2e-5`, weight decay `0.01`, linear warmup 10%;
+- максимум 5 epochs с patience 2 по validation strict F1;
+- checkpoint след всяка epoch в `checkpoints/distilbert/latest/` и best
+  копие в `checkpoints/distilbert/best/`;
+- `--resume-from` позволява продължаване на друга машина.
+
+Резултати върху validation set:
+
+- epoch 1: loss `1.2754`, strict F1 `0.5924`;
+- epoch 2: loss `0.5759`, strict F1 `0.6453`;
+- epoch 3: loss `0.4617`, strict F1 `0.6542`;
+- epoch 4: loss `0.3927`, strict F1 `0.6541`;
+- epoch 5: loss `0.3506`, strict F1 `0.6594`, relaxed F1 `0.7828`.
+
+Най-добрият checkpoint е epoch 5. Validation strict F1 `0.6594` надвишава CRF
+baseline `0.6339` с `+0.0255`. Обучението отне около 52.2 минути при peak
+allocated VRAM около `1.29 GB`. Locked test set не е използван; еднократната
+test оценка е следващият етап.
+
+Подробният отчет е в `artifacts/distilbert_training_metrics.json`.
+
 ## 8. Поетапна работа и quality gates
 
 Не преминаваме към следващ етап, докато текущият не е проверен.

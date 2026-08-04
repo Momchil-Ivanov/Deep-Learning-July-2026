@@ -114,6 +114,7 @@ python scripts\prepare_chia.py
 python scripts\train_crf.py --smoke-test
 python scripts\train_crf.py
 python scripts\smoke_distilbert.py
+python scripts\train_distilbert.py
 ```
 
 `PYTHONUTF8` is required in the current workspace because its Windows path
@@ -130,6 +131,11 @@ ignored by Git.
 3 AdamW optimizer steps with gradient accumulation 4, checkpoint save/load, and
 resume for one additional step. It does not use the locked test set.
 
+`train_distilbert.py` trains on the full locked train split, validates every
+epoch, keeps the best checkpoint by validation strict F1, and supports
+`--resume-from` for continuing on another machine. The locked test set stays
+unused until Stage 8.
+
 ## Repository structure
 
 ```text
@@ -141,13 +147,15 @@ resume for one additional step. It does not use the locked test set.
 │   ├── audit_chia.py           # Reproducible data-quality audit
 │   ├── prepare_chia.py         # Split, overlap, and BIO quality gate
 │   ├── train_crf.py            # CRF smoke/full training and evaluation
-│   └── smoke_distilbert.py     # DistilBERT CUDA / resume quality gate
+│   ├── smoke_distilbert.py     # DistilBERT CUDA / resume quality gate
+│   └── train_distilbert.py     # Full DistilBERT training + early stopping
 ├── src/
 │   └── trial_criteria_ner/
 │       ├── baseline.py         # CRF features and entity-level metrics
 │       ├── data.py             # CHIA download, parsing, and audit
 │       ├── preprocessing.py    # Splits, overlap policy, and BIO alignment
-│       └── transformer_data.py # Windowed DistilBERT BIO inputs
+│       ├── transformer_data.py # Windowed DistilBERT BIO inputs
+│       └── transformer_train.py# Train/eval/checkpoint helpers
 ├── tests/                     # Unit and data-integrity tests
 ├── .gitignore
 ├── pyproject.toml
@@ -155,7 +163,7 @@ resume for one additional step. It does not use the locked test set.
 └── requirements.txt
 ```
 
-Full DistilBERT training and the experiment notebook follow after Stage 6.
+Held-out test evaluation and the experiment notebook follow after Stage 7.
 
 ## Current status
 
@@ -219,6 +227,20 @@ Stage 6 is complete:
 
 The smoke report is stored in
 [`artifacts/distilbert_smoke_metrics.json`](artifacts/distilbert_smoke_metrics.json).
+
+Stage 7 is complete:
+
+- DistilBERT trained on all 9,856 train windows for 5 epochs (no early stop);
+- AdamW `2e-5`, weight decay `0.01`, batch size 1, gradient accumulation 16;
+- best checkpoint at epoch 5 with validation strict F1 `0.6594` and relaxed
+  F1 `0.7828`;
+- beats the CRF validation strict F1 `0.6339` by `+0.0255`;
+- training took about 52.2 minutes; peak allocated VRAM about `1.29 GB`;
+- the locked test set was not used.
+
+The training report is stored in
+[`artifacts/distilbert_training_metrics.json`](artifacts/distilbert_training_metrics.json).
+Best weights live in Git-ignored `checkpoints/distilbert/best/`.
 
 ## Documentation
 
