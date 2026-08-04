@@ -115,6 +115,7 @@ python scripts\train_crf.py --smoke-test
 python scripts\train_crf.py
 python scripts\smoke_distilbert.py
 python scripts\train_distilbert.py
+python scripts\evaluate_test.py
 ```
 
 `PYTHONUTF8` is required in the current workspace because its Windows path
@@ -136,6 +137,9 @@ epoch, keeps the best checkpoint by validation strict F1, and supports
 `--resume-from` for continuing on another machine. The locked test set stays
 unused until Stage 8.
 
+`evaluate_test.py` is the one-shot Stage 8 comparison on the locked 100-trial
+test split. It performs no additional training.
+
 ## Repository structure
 
 ```text
@@ -148,11 +152,13 @@ unused until Stage 8.
 │   ├── prepare_chia.py         # Split, overlap, and BIO quality gate
 │   ├── train_crf.py            # CRF smoke/full training and evaluation
 │   ├── smoke_distilbert.py     # DistilBERT CUDA / resume quality gate
-│   └── train_distilbert.py     # Full DistilBERT training + early stopping
+│   ├── train_distilbert.py     # Full DistilBERT training + early stopping
+│   └── evaluate_test.py        # One-shot locked test comparison
 ├── src/
 │   └── trial_criteria_ner/
 │       ├── baseline.py         # CRF features and entity-level metrics
 │       ├── data.py             # CHIA download, parsing, and audit
+│       ├── error_analysis.py   # Boundary/type/miss/spurious buckets
 │       ├── preprocessing.py    # Splits, overlap policy, and BIO alignment
 │       ├── transformer_data.py # Windowed DistilBERT BIO inputs
 │       └── transformer_train.py# Train/eval/checkpoint helpers
@@ -163,7 +169,7 @@ unused until Stage 8.
 └── requirements.txt
 ```
 
-Held-out test evaluation and the experiment notebook follow after Stage 7.
+The experiment notebook and final reproducibility pass follow after Stage 8.
 
 ## Current status
 
@@ -241,6 +247,20 @@ Stage 7 is complete:
 The training report is stored in
 [`artifacts/distilbert_training_metrics.json`](artifacts/distilbert_training_metrics.json).
 Best weights live in Git-ignored `checkpoints/distilbert/best/`.
+
+Stage 8 is complete:
+
+- one-shot evaluation on the locked 100 NCT / 1,310-criterion test split;
+- no additional training was performed;
+- CRF test strict F1 `0.5884`, relaxed F1 `0.7275`;
+- DistilBERT test strict F1 `0.6192`, relaxed F1 `0.7583`;
+- DistilBERT wins by `+0.0308` strict and `+0.0307` relaxed F1;
+- DistilBERT reduces missed entities (`610` vs CRF `1068`) but has more
+  spurious predictions (`1019` vs `570`);
+- exclusion criteria remain easier than inclusion for both models.
+
+The comparison report is stored in
+[`artifacts/test_evaluation.json`](artifacts/test_evaluation.json).
 
 ## Documentation
 

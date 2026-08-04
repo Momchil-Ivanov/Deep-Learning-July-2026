@@ -1,0 +1,2516 @@
+{
+  "comparison": {
+    "relaxed_f1_crf": 0.7275109170305677,
+    "relaxed_f1_delta": 0.03074637637644939,
+    "relaxed_f1_distilbert": 0.7582572934070171,
+    "strict_f1_crf": 0.5883551673944687,
+    "strict_f1_delta": 0.030845449492820753,
+    "strict_f1_distilbert": 0.6192006168872894,
+    "winner_strict": "distilbert"
+  },
+  "crf": {
+    "checkpoint": "checkpoints\\crf_baseline.pkl",
+    "error_counts": {
+      "boundary_error": 478,
+      "exact_match": 2021,
+      "missed_entity": 1068,
+      "spurious_entity": 570,
+      "type_error": 117
+    },
+    "error_examples": [
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00198913_exc:1",
+        "gold_entities": [
+          {
+            "end": 3,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 5,
+            "start": 4,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 0,
+            "type": "Condition"
+          }
+        ],
+        "text": "type 1 diabetic or non-diabetic"
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00404495_exc:2",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 7,
+            "start": 5,
+            "type": "Procedure"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 7,
+            "start": 5,
+            "type": "Procedure"
+          }
+        ],
+        "text": "Concurrent administration of any other anti-tumor therapy"
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 0,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "spurious_entity"
+        ],
+        "example_id": "NCT00404495_exc:3",
+        "gold_entities": [
+          {
+            "end": 3,
+            "start": 1,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 3,
+            "start": 1,
+            "type": "Condition"
+          }
+        ],
+        "text": "Pre-existing uncontrolled diarrhea"
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 3,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "missed_entity",
+          "spurious_entity"
+        ],
+        "example_id": "NCT00404495_inc:1",
+        "gold_entities": [
+          {
+            "end": 4,
+            "start": 3,
+            "type": "Condition"
+          },
+          {
+            "end": 7,
+            "start": 6,
+            "type": "Condition"
+          },
+          {
+            "end": 12,
+            "start": 10,
+            "type": "Procedure"
+          },
+          {
+            "end": 20,
+            "start": 18,
+            "type": "Mood"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 7,
+            "start": 6,
+            "type": "Condition"
+          },
+          {
+            "end": 23,
+            "start": 22,
+            "type": "Condition"
+          }
+        ],
+        "text": "Cohort 1 : Recurrent or refractory medulloblastoma in which current standard treatment approaches have failed ; biopsy is not required for recurrent disease ."
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 2,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "missed_entity",
+          "spurious_entity"
+        ],
+        "example_id": "NCT00404495_inc:2",
+        "gold_entities": [
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 14,
+            "start": 7,
+            "type": "Measurement"
+          },
+          {
+            "end": 17,
+            "start": 14,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 4,
+            "start": 3,
+            "type": "Temporal"
+          },
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Condition"
+          }
+        ],
+        "text": "Cohort 2 : Newly-diagnosed high-grade glioma ( World Health Organization [ WHO ] grade 3 or 4 )"
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 0,
+          "spurious_entity": 0,
+          "type_error": 1
+        },
+        "error_kinds": [
+          "type_error"
+        ],
+        "example_id": "NCT00404495_inc:3",
+        "gold_entities": [
+          {
+            "end": 2,
+            "start": 0,
+            "type": "Measurement"
+          },
+          {
+            "end": 5,
+            "start": 2,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 2,
+            "start": 0,
+            "type": "Observation"
+          },
+          {
+            "end": 5,
+            "start": 2,
+            "type": "Value"
+          }
+        ],
+        "text": "Life expectancy \u2265 3 months"
+      },
+      {
+        "counts": {
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:1",
+        "gold_entities": [
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Mood"
+          }
+        ],
+        "predicted_entities": [],
+        "text": "Subjects not able to give informed consent"
+      },
+      {
+        "counts": {
+          "boundary_error": 1,
+          "exact_match": 3,
+          "missed_entity": 0,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "boundary_error"
+        ],
+        "example_id": "NCT00426751_exc:6",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 8,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 13,
+            "start": 8,
+            "type": "Temporal"
+          },
+          {
+            "end": 19,
+            "start": 16,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 7,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 13,
+            "start": 8,
+            "type": "Temporal"
+          },
+          {
+            "end": 19,
+            "start": 16,
+            "type": "Condition"
+          }
+        ],
+        "text": "Stroke or Transient Ischemic Attack ( TIA ) within the past 6 months or any permanent residual neurological defect"
+      },
+      {
+        "counts": {
+          "boundary_error": 1,
+          "exact_match": 1,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "boundary_error",
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:7",
+        "gold_entities": [
+          {
+            "end": 4,
+            "start": 3,
+            "type": "Temporal"
+          },
+          {
+            "end": 5,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 8,
+            "start": 7,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 5,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 8,
+            "start": 6,
+            "type": "Condition"
+          }
+        ],
+        "text": "Evidence of an active gastrointestinal or urogenital bleeding"
+      },
+      {
+        "counts": {
+          "exact_match": 3,
+          "missed_entity": 3,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:9",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 5,
+            "type": "Drug"
+          },
+          {
+            "end": 8,
+            "start": 7,
+            "type": "Drug"
+          },
+          {
+            "end": 15,
+            "start": 10,
+            "type": "Drug"
+          },
+          {
+            "end": 19,
+            "start": 17,
+            "type": "Drug"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 5,
+            "type": "Drug"
+          },
+          {
+            "end": 8,
+            "start": 7,
+            "type": "Drug"
+          }
+        ],
+        "text": "History of allergic reaction to abciximab or eptifibatide or any component used in the study ( including contrast media )"
+      },
+      {
+        "counts": {
+          "boundary_error": 3,
+          "exact_match": 4,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "boundary_error",
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:10",
+        "gold_entities": [
+          {
+            "end": 3,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Measurement"
+          },
+          {
+            "end": 10,
+            "start": 6,
+            "type": "Value"
+          },
+          {
+            "end": 14,
+            "start": 13,
+            "type": "Condition"
+          },
+          {
+            "end": 22,
+            "start": 17,
+            "type": "Measurement"
+          },
+          {
+            "end": 28,
+            "start": 23,
+            "type": "Measurement"
+          },
+          {
+            "end": 29,
+            "start": 28,
+            "type": "Value"
+          },
+          {
+            "end": 36,
+            "start": 30,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Measurement"
+          },
+          {
+            "end": 10,
+            "start": 6,
+            "type": "Value"
+          },
+          {
+            "end": 14,
+            "start": 12,
+            "type": "Condition"
+          },
+          {
+            "end": 21,
+            "start": 17,
+            "type": "Measurement"
+          },
+          {
+            "end": 28,
+            "start": 23,
+            "type": "Measurement"
+          },
+          {
+            "end": 36,
+            "start": 28,
+            "type": "Value"
+          }
+        ],
+        "text": "Known severe renal ( creatinine clearance < 30ml / min ) or hepatic insufficiency as well as Alanine transaminase ( ALT ) / aspartate transaminase ( AST ) elevations = 3xUpper limit normal ( ULN ) ; isolated AST-elevation is not considered "
+      },
+      {
+        "counts": {
+          "boundary_error": 1,
+          "missed_entity": 2,
+          "spurious_entity": 0,
+          "type_error": 2
+        },
+        "error_kinds": [
+          "type_error",
+          "boundary_error",
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:11",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 2,
+            "start": 1,
+            "type": "Temporal"
+          },
+          {
+            "end": 3,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Measurement"
+          },
+          {
+            "end": 9,
+            "start": 6,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 1,
+            "type": "Condition"
+          },
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Observation"
+          },
+          {
+            "end": 9,
+            "start": 6,
+            "type": "Temporal"
+          }
+        ],
+        "text": "Severe concomitant disease with life expectation < 1 year"
+      }
+    ],
+    "example_count": 1310,
+    "metrics": {
+      "by_criteria_type": {
+        "exclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.8373626373626373,
+                "fn": 166,
+                "fp": 130,
+                "precision": 0.8542600896860987,
+                "recall": 0.8211206896551724,
+                "tp": 762
+              },
+              "strict": {
+                "f1": 0.6901098901098901,
+                "fn": 300,
+                "fp": 264,
+                "precision": 0.7040358744394619,
+                "recall": 0.6767241379310345,
+                "tp": 628
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.1904761904761905,
+                "fn": 10,
+                "fp": 7,
+                "precision": 0.2222222222222222,
+                "recall": 0.16666666666666666,
+                "tp": 2
+              },
+              "strict": {
+                "f1": 0.1904761904761905,
+                "fn": 10,
+                "fp": 7,
+                "precision": 0.2222222222222222,
+                "recall": 0.16666666666666666,
+                "tp": 2
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.7439759036144578,
+                "fn": 105,
+                "fp": 65,
+                "precision": 0.7916666666666666,
+                "recall": 0.7017045454545454,
+                "tp": 247
+              },
+              "strict": {
+                "f1": 0.6445783132530121,
+                "fn": 138,
+                "fp": 98,
+                "precision": 0.6858974358974359,
+                "recall": 0.6079545454545454,
+                "tp": 214
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.7892976588628763,
+                "fn": 37,
+                "fp": 26,
+                "precision": 0.8194444444444444,
+                "recall": 0.7612903225806451,
+                "tp": 118
+              },
+              "strict": {
+                "f1": 0.588628762541806,
+                "fn": 67,
+                "fp": 56,
+                "precision": 0.6111111111111112,
+                "recall": 0.567741935483871,
+                "tp": 88
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.4406779661016949,
+                "fn": 26,
+                "fp": 7,
+                "precision": 0.65,
+                "recall": 0.3333333333333333,
+                "tp": 13
+              },
+              "strict": {
+                "f1": 0.2033898305084746,
+                "fn": 33,
+                "fp": 14,
+                "precision": 0.3,
+                "recall": 0.15384615384615385,
+                "tp": 6
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.28,
+                "fn": 60,
+                "fp": 12,
+                "precision": 0.5384615384615384,
+                "recall": 0.1891891891891892,
+                "tp": 14
+              },
+              "strict": {
+                "f1": 0.2,
+                "fn": 64,
+                "fp": 16,
+                "precision": 0.38461538461538464,
+                "recall": 0.13513513513513514,
+                "tp": 10
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.6588235294117646,
+                "fn": 15,
+                "fp": 14,
+                "precision": 0.6666666666666666,
+                "recall": 0.6511627906976745,
+                "tp": 28
+              },
+              "strict": {
+                "f1": 0.6352941176470588,
+                "fn": 16,
+                "fp": 15,
+                "precision": 0.6428571428571429,
+                "recall": 0.627906976744186,
+                "tp": 27
+              }
+            },
+            "Pregnancy_considerations": {
+              "relaxed": {
+                "f1": 0.3,
+                "fn": 9,
+                "fp": 5,
+                "precision": 0.375,
+                "recall": 0.25,
+                "tp": 3
+              },
+              "strict": {
+                "f1": 0.1,
+                "fn": 11,
+                "fp": 7,
+                "precision": 0.125,
+                "recall": 0.08333333333333333,
+                "tp": 1
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.6220930232558141,
+                "fn": 90,
+                "fp": 40,
+                "precision": 0.7278911564625851,
+                "recall": 0.5431472081218274,
+                "tp": 107
+              },
+              "strict": {
+                "f1": 0.47674418604651164,
+                "fn": 115,
+                "fp": 65,
+                "precision": 0.5578231292517006,
+                "recall": 0.41624365482233505,
+                "tp": 82
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.664323374340949,
+                "fn": 133,
+                "fp": 58,
+                "precision": 0.7651821862348178,
+                "recall": 0.5869565217391305,
+                "tp": 189
+              },
+              "strict": {
+                "f1": 0.5448154657293497,
+                "fn": 167,
+                "fp": 92,
+                "precision": 0.6275303643724697,
+                "recall": 0.4813664596273292,
+                "tp": 155
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.8227848101265822,
+                "fn": 34,
+                "fp": 22,
+                "precision": 0.8552631578947368,
+                "recall": 0.7926829268292683,
+                "tp": 130
+              },
+              "strict": {
+                "f1": 0.7088607594936709,
+                "fn": 52,
+                "fp": 40,
+                "precision": 0.7368421052631579,
+                "recall": 0.6829268292682927,
+                "tp": 112
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.750756341633698,
+            "fn": 685,
+            "fp": 386,
+            "precision": 0.806903451725863,
+            "recall": 0.7019147084421236,
+            "tp": 1613
+          },
+          "strict": {
+            "f1": 0.6167093320921574,
+            "fn": 973,
+            "fp": 674,
+            "precision": 0.662831415707854,
+            "recall": 0.5765883376849434,
+            "tp": 1325
+          }
+        },
+        "inclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.6943999999999999,
+                "fn": 135,
+                "fp": 56,
+                "precision": 0.7948717948717948,
+                "recall": 0.6164772727272727,
+                "tp": 217
+              },
+              "strict": {
+                "f1": 0.5120000000000001,
+                "fn": 192,
+                "fp": 113,
+                "precision": 0.5860805860805861,
+                "recall": 0.45454545454545453,
+                "tp": 160
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.4210526315789474,
+                "fn": 8,
+                "fp": 3,
+                "precision": 0.5714285714285714,
+                "recall": 0.3333333333333333,
+                "tp": 4
+              },
+              "strict": {
+                "f1": 0.3157894736842105,
+                "fn": 9,
+                "fp": 4,
+                "precision": 0.42857142857142855,
+                "recall": 0.25,
+                "tp": 3
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.5,
+                "fn": 19,
+                "fp": 31,
+                "precision": 0.44642857142857145,
+                "recall": 0.5681818181818182,
+                "tp": 25
+              },
+              "strict": {
+                "f1": 0.44,
+                "fn": 22,
+                "fp": 34,
+                "precision": 0.39285714285714285,
+                "recall": 0.5,
+                "tp": 22
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.7169811320754716,
+                "fn": 65,
+                "fp": 40,
+                "precision": 0.7687861271676301,
+                "recall": 0.6717171717171717,
+                "tp": 133
+              },
+              "strict": {
+                "f1": 0.5336927223719676,
+                "fn": 99,
+                "fp": 74,
+                "precision": 0.5722543352601156,
+                "recall": 0.5,
+                "tp": 99
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.48648648648648646,
+                "fn": 15,
+                "fp": 4,
+                "precision": 0.6923076923076923,
+                "recall": 0.375,
+                "tp": 9
+              },
+              "strict": {
+                "f1": 0.2702702702702703,
+                "fn": 19,
+                "fp": 8,
+                "precision": 0.38461538461538464,
+                "recall": 0.20833333333333334,
+                "tp": 5
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.15789473684210525,
+                "fn": 51,
+                "fp": 13,
+                "precision": 0.3157894736842105,
+                "recall": 0.10526315789473684,
+                "tp": 6
+              },
+              "strict": {
+                "f1": 0.13157894736842105,
+                "fn": 52,
+                "fp": 14,
+                "precision": 0.2631578947368421,
+                "recall": 0.08771929824561403,
+                "tp": 5
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.815884476534296,
+                "fn": 30,
+                "fp": 21,
+                "precision": 0.8432835820895522,
+                "recall": 0.7902097902097902,
+                "tp": 113
+              },
+              "strict": {
+                "f1": 0.7870036101083031,
+                "fn": 34,
+                "fp": 25,
+                "precision": 0.8134328358208955,
+                "recall": 0.7622377622377622,
+                "tp": 109
+              }
+            },
+            "Pregnancy_considerations": {
+              "relaxed": {
+                "f1": 0.37037037037037035,
+                "fn": 1,
+                "fp": 16,
+                "precision": 0.23809523809523808,
+                "recall": 0.8333333333333334,
+                "tp": 5
+              },
+              "strict": {
+                "f1": 0.22222222222222224,
+                "fn": 3,
+                "fp": 18,
+                "precision": 0.14285714285714285,
+                "recall": 0.5,
+                "tp": 3
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.5957446808510638,
+                "fn": 76,
+                "fp": 57,
+                "precision": 0.632258064516129,
+                "recall": 0.5632183908045977,
+                "tp": 98
+              },
+              "strict": {
+                "f1": 0.46808510638297873,
+                "fn": 97,
+                "fp": 78,
+                "precision": 0.4967741935483871,
+                "recall": 0.4425287356321839,
+                "tp": 77
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.6249999999999999,
+                "fn": 59,
+                "fp": 31,
+                "precision": 0.7075471698113207,
+                "recall": 0.5597014925373134,
+                "tp": 75
+              },
+              "strict": {
+                "f1": 0.4666666666666667,
+                "fn": 78,
+                "fp": 50,
+                "precision": 0.5283018867924528,
+                "recall": 0.417910447761194,
+                "tp": 56
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.8516949152542372,
+                "fn": 41,
+                "fp": 29,
+                "precision": 0.8739130434782608,
+                "recall": 0.8305785123966942,
+                "tp": 201
+              },
+              "strict": {
+                "f1": 0.6652542372881356,
+                "fn": 85,
+                "fp": 73,
+                "precision": 0.6826086956521739,
+                "recall": 0.6487603305785123,
+                "tp": 157
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.6886902448503692,
+            "fn": 500,
+            "fp": 301,
+            "precision": 0.7464195450716091,
+            "recall": 0.6392496392496393,
+            "tp": 886
+          },
+          "strict": {
+            "f1": 0.5410027205596579,
+            "fn": 690,
+            "fp": 491,
+            "precision": 0.586352148272957,
+            "recall": 0.5021645021645021,
+            "tp": 696
+          }
+        }
+      },
+      "per_type": {
+        "Condition": {
+          "relaxed": {
+            "f1": 0.8008179959100205,
+            "fn": 301,
+            "fp": 186,
+            "precision": 0.8403433476394849,
+            "recall": 0.76484375,
+            "tp": 979
+          },
+          "strict": {
+            "f1": 0.6445807770961146,
+            "fn": 492,
+            "fp": 377,
+            "precision": 0.6763948497854078,
+            "recall": 0.615625,
+            "tp": 788
+          }
+        },
+        "Device": {
+          "relaxed": {
+            "f1": 0.3,
+            "fn": 18,
+            "fp": 10,
+            "precision": 0.375,
+            "recall": 0.25,
+            "tp": 6
+          },
+          "strict": {
+            "f1": 0.25,
+            "fn": 19,
+            "fp": 11,
+            "precision": 0.3125,
+            "recall": 0.20833333333333334,
+            "tp": 5
+          }
+        },
+        "Drug": {
+          "relaxed": {
+            "f1": 0.7120418848167539,
+            "fn": 124,
+            "fp": 96,
+            "precision": 0.7391304347826086,
+            "recall": 0.6868686868686869,
+            "tp": 272
+          },
+          "strict": {
+            "f1": 0.6178010471204187,
+            "fn": 160,
+            "fp": 132,
+            "precision": 0.6413043478260869,
+            "recall": 0.5959595959595959,
+            "tp": 236
+          }
+        },
+        "Measurement": {
+          "relaxed": {
+            "f1": 0.7492537313432835,
+            "fn": 102,
+            "fp": 66,
+            "precision": 0.7917981072555205,
+            "recall": 0.7110481586402266,
+            "tp": 251
+          },
+          "strict": {
+            "f1": 0.5582089552238806,
+            "fn": 166,
+            "fp": 130,
+            "precision": 0.5899053627760252,
+            "recall": 0.5297450424929179,
+            "tp": 187
+          }
+        },
+        "Mood": {
+          "relaxed": {
+            "f1": 0.4583333333333333,
+            "fn": 41,
+            "fp": 11,
+            "precision": 0.6666666666666666,
+            "recall": 0.3492063492063492,
+            "tp": 22
+          },
+          "strict": {
+            "f1": 0.22916666666666666,
+            "fn": 52,
+            "fp": 22,
+            "precision": 0.3333333333333333,
+            "recall": 0.1746031746031746,
+            "tp": 11
+          }
+        },
+        "Observation": {
+          "relaxed": {
+            "f1": 0.22727272727272727,
+            "fn": 111,
+            "fp": 25,
+            "precision": 0.4444444444444444,
+            "recall": 0.15267175572519084,
+            "tp": 20
+          },
+          "strict": {
+            "f1": 0.17045454545454541,
+            "fn": 116,
+            "fp": 30,
+            "precision": 0.3333333333333333,
+            "recall": 0.11450381679389313,
+            "tp": 15
+          }
+        },
+        "Person": {
+          "relaxed": {
+            "f1": 0.7790055248618785,
+            "fn": 45,
+            "fp": 35,
+            "precision": 0.8011363636363636,
+            "recall": 0.7580645161290323,
+            "tp": 141
+          },
+          "strict": {
+            "f1": 0.7513812154696133,
+            "fn": 50,
+            "fp": 40,
+            "precision": 0.7727272727272727,
+            "recall": 0.7311827956989247,
+            "tp": 136
+          }
+        },
+        "Pregnancy_considerations": {
+          "relaxed": {
+            "f1": 0.3404255319148936,
+            "fn": 10,
+            "fp": 21,
+            "precision": 0.27586206896551724,
+            "recall": 0.4444444444444444,
+            "tp": 8
+          },
+          "strict": {
+            "f1": 0.1702127659574468,
+            "fn": 14,
+            "fp": 25,
+            "precision": 0.13793103448275862,
+            "recall": 0.2222222222222222,
+            "tp": 4
+          }
+        },
+        "Procedure": {
+          "relaxed": {
+            "f1": 0.6092124814264488,
+            "fn": 166,
+            "fp": 97,
+            "precision": 0.6788079470198676,
+            "recall": 0.5525606469002695,
+            "tp": 205
+          },
+          "strict": {
+            "f1": 0.47251114413075784,
+            "fn": 212,
+            "fp": 143,
+            "precision": 0.5264900662251656,
+            "recall": 0.42857142857142855,
+            "tp": 159
+          }
+        },
+        "Temporal": {
+          "relaxed": {
+            "f1": 0.6526576019777504,
+            "fn": 192,
+            "fp": 89,
+            "precision": 0.7478753541076487,
+            "recall": 0.5789473684210527,
+            "tp": 264
+          },
+          "strict": {
+            "f1": 0.5216316440049444,
+            "fn": 245,
+            "fp": 142,
+            "precision": 0.5977337110481586,
+            "recall": 0.46271929824561403,
+            "tp": 211
+          }
+        },
+        "Value": {
+          "relaxed": {
+            "f1": 0.8401015228426395,
+            "fn": 75,
+            "fp": 51,
+            "precision": 0.8664921465968587,
+            "recall": 0.8152709359605911,
+            "tp": 331
+          },
+          "strict": {
+            "f1": 0.6827411167512691,
+            "fn": 137,
+            "fp": 113,
+            "precision": 0.7041884816753927,
+            "recall": 0.6625615763546798,
+            "tp": 269
+          }
+        }
+      },
+      "relaxed": {
+        "f1": 0.7275109170305677,
+        "fn": 1185,
+        "fp": 687,
+        "precision": 0.7843691148775894,
+        "recall": 0.6783387622149837,
+        "tp": 2499
+      },
+      "strict": {
+        "f1": 0.5883551673944687,
+        "fn": 1663,
+        "fp": 1165,
+        "precision": 0.6343377275580665,
+        "recall": 0.5485884907709012,
+        "tp": 2021
+      }
+    },
+    "prediction_seconds": 0.7274234000360593
+  },
+  "distilbert": {
+    "checkpoint": "checkpoints\\distilbert\\best",
+    "device": "NVIDIA GeForce GTX 1050 Ti",
+    "error_counts": {
+      "boundary_error": 541,
+      "exact_match": 2409,
+      "missed_entity": 610,
+      "spurious_entity": 1019,
+      "type_error": 126
+    },
+    "error_examples": [
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00404495_exc:2#w0",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 9,
+            "start": 5,
+            "type": "Procedure"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 9,
+            "start": 5,
+            "type": "Procedure"
+          }
+        ],
+        "text": "Concurrent administration of any other anti-tumor therapy"
+      },
+      {
+        "counts": {
+          "boundary_error": 1,
+          "missed_entity": 0,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "boundary_error",
+          "spurious_entity"
+        ],
+        "example_id": "NCT00404495_exc:3#w0",
+        "gold_entities": [
+          {
+            "end": 10,
+            "start": 3,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 10,
+            "start": 7,
+            "type": "Condition"
+          }
+        ],
+        "text": "Pre-existing uncontrolled diarrhea"
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 3,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "missed_entity",
+          "spurious_entity"
+        ],
+        "example_id": "NCT00404495_inc:1#w0",
+        "gold_entities": [
+          {
+            "end": 6,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 16,
+            "start": 10,
+            "type": "Condition"
+          },
+          {
+            "end": 21,
+            "start": 19,
+            "type": "Procedure"
+          },
+          {
+            "end": 30,
+            "start": 28,
+            "type": "Mood"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 16,
+            "start": 10,
+            "type": "Condition"
+          },
+          {
+            "end": 27,
+            "start": 25,
+            "type": "Procedure"
+          }
+        ],
+        "text": "Cohort 1: Recurrent or refractory medulloblastoma in which current standard treatment approaches have failed; biopsy is not required for recurrent disease."
+      },
+      {
+        "counts": {
+          "exact_match": 1,
+          "missed_entity": 0,
+          "spurious_entity": 0,
+          "type_error": 1
+        },
+        "error_kinds": [
+          "type_error"
+        ],
+        "example_id": "NCT00404495_inc:3#w0",
+        "gold_entities": [
+          {
+            "end": 3,
+            "start": 0,
+            "type": "Measurement"
+          },
+          {
+            "end": 6,
+            "start": 3,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 0,
+            "type": "Observation"
+          },
+          {
+            "end": 6,
+            "start": 3,
+            "type": "Value"
+          }
+        ],
+        "text": "Life expectancy \u2265 3 months"
+      },
+      {
+        "counts": {
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:1#w0",
+        "gold_entities": [
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Mood"
+          }
+        ],
+        "predicted_entities": [],
+        "text": "Subjects not able to give informed consent"
+      },
+      {
+        "counts": {
+          "exact_match": 4,
+          "missed_entity": 0,
+          "spurious_entity": 1
+        },
+        "error_kinds": [
+          "spurious_entity"
+        ],
+        "example_id": "NCT00426751_exc:6#w0",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 10,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 15,
+            "start": 10,
+            "type": "Temporal"
+          },
+          {
+            "end": 21,
+            "start": 18,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 10,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 15,
+            "start": 10,
+            "type": "Temporal"
+          },
+          {
+            "end": 18,
+            "start": 17,
+            "type": "Condition"
+          },
+          {
+            "end": 21,
+            "start": 18,
+            "type": "Condition"
+          }
+        ],
+        "text": "Stroke or Transient Ischemic Attack (TIA) within the past 6 months or any permanent residual neurological defect"
+      },
+      {
+        "counts": {
+          "exact_match": 2,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:7#w0",
+        "gold_entities": [
+          {
+            "end": 4,
+            "start": 3,
+            "type": "Temporal"
+          },
+          {
+            "end": 8,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 13,
+            "start": 12,
+            "type": "Condition"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 8,
+            "start": 4,
+            "type": "Condition"
+          },
+          {
+            "end": 13,
+            "start": 12,
+            "type": "Condition"
+          }
+        ],
+        "text": "Evidence of an active gastrointestinal or urogenital bleeding"
+      },
+      {
+        "counts": {
+          "boundary_error": 1,
+          "exact_match": 5,
+          "missed_entity": 0,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "boundary_error"
+        ],
+        "example_id": "NCT00426751_exc:9#w0",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 5,
+            "type": "Drug"
+          },
+          {
+            "end": 15,
+            "start": 10,
+            "type": "Drug"
+          },
+          {
+            "end": 22,
+            "start": 17,
+            "type": "Drug"
+          },
+          {
+            "end": 26,
+            "start": 24,
+            "type": "Drug"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Temporal"
+          },
+          {
+            "end": 4,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 5,
+            "type": "Drug"
+          },
+          {
+            "end": 15,
+            "start": 10,
+            "type": "Drug"
+          },
+          {
+            "end": 20,
+            "start": 17,
+            "type": "Drug"
+          },
+          {
+            "end": 26,
+            "start": 24,
+            "type": "Drug"
+          }
+        ],
+        "text": "History of allergic reaction to abciximab or eptifibatide or any component used in the study (including contrast media)"
+      },
+      {
+        "counts": {
+          "boundary_error": 3,
+          "exact_match": 4,
+          "missed_entity": 1,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "boundary_error",
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:10#w0",
+        "gold_entities": [
+          {
+            "end": 3,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 4,
+            "type": "Measurement"
+          },
+          {
+            "end": 14,
+            "start": 9,
+            "type": "Value"
+          },
+          {
+            "end": 23,
+            "start": 19,
+            "type": "Condition"
+          },
+          {
+            "end": 34,
+            "start": 26,
+            "type": "Measurement"
+          },
+          {
+            "end": 45,
+            "start": 35,
+            "type": "Measurement"
+          },
+          {
+            "end": 46,
+            "start": 45,
+            "type": "Value"
+          },
+          {
+            "end": 57,
+            "start": 47,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 3,
+            "start": 2,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 4,
+            "type": "Measurement"
+          },
+          {
+            "end": 14,
+            "start": 9,
+            "type": "Value"
+          },
+          {
+            "end": 23,
+            "start": 16,
+            "type": "Condition"
+          },
+          {
+            "end": 34,
+            "start": 26,
+            "type": "Measurement"
+          },
+          {
+            "end": 46,
+            "start": 35,
+            "type": "Measurement"
+          },
+          {
+            "end": 57,
+            "start": 46,
+            "type": "Value"
+          }
+        ],
+        "text": "Known severe renal (creatinine clearance <30ml/min) or hepatic insufficiency as well as Alanine transaminase (ALT)/aspartate transaminase (AST) elevations = 3xUpper limit normal (ULN); isolated AST-elevation is not considered an exclusion c"
+      },
+      {
+        "counts": {
+          "exact_match": 3,
+          "missed_entity": 1,
+          "spurious_entity": 0,
+          "type_error": 1
+        },
+        "error_kinds": [
+          "type_error",
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:11#w0",
+        "gold_entities": [
+          {
+            "end": 1,
+            "start": 0,
+            "type": "Condition"
+          },
+          {
+            "end": 5,
+            "start": 1,
+            "type": "Temporal"
+          },
+          {
+            "end": 6,
+            "start": 5,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 7,
+            "type": "Measurement"
+          },
+          {
+            "end": 12,
+            "start": 9,
+            "type": "Value"
+          }
+        ],
+        "predicted_entities": [
+          {
+            "end": 5,
+            "start": 1,
+            "type": "Temporal"
+          },
+          {
+            "end": 6,
+            "start": 5,
+            "type": "Condition"
+          },
+          {
+            "end": 9,
+            "start": 7,
+            "type": "Observation"
+          },
+          {
+            "end": 12,
+            "start": 9,
+            "type": "Value"
+          }
+        ],
+        "text": "Severe concomitant disease with life expectation < 1 year"
+      },
+      {
+        "counts": {
+          "missed_entity": 5,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:12#w0",
+        "gold_entities": [
+          {
+            "end": 6,
+            "start": 2,
+            "type": "Observation"
+          },
+          {
+            "end": 11,
+            "start": 8,
+            "type": "Drug"
+          },
+          {
+            "end": 13,
+            "start": 12,
+            "type": "Device"
+          },
+          {
+            "end": 16,
+            "start": 13,
+            "type": "Temporal"
+          },
+          {
+            "end": 27,
+            "start": 22,
+            "type": "Temporal"
+          }
+        ],
+        "predicted_entities": [],
+        "text": "Subject has participated in any study using an investigational drug or device within 30 days or within 5 half-lives of the investigational drug (whichever is longer) of entry into this study."
+      },
+      {
+        "counts": {
+          "missed_entity": 2,
+          "spurious_entity": 0
+        },
+        "error_kinds": [
+          "missed_entity"
+        ],
+        "example_id": "NCT00426751_exc:13#w0",
+        "gold_entities": [
+          {
+            "end": 5,
+            "start": 4,
+            "type": "Observation"
+          },
+          {
+            "end": 17,
+            "start": 11,
+            "type": "Temporal"
+          }
+        ],
+        "predicted_entities": [],
+        "text": "Subjects who will be inaccessible due to geographic or social factors during treatment or follow-up"
+      }
+    ],
+    "metrics": {
+      "by_criteria_type": {
+        "exclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.8593749999999999,
+                "fn": 103,
+                "fp": 167,
+                "precision": 0.8316532258064516,
+                "recall": 0.8890086206896551,
+                "tp": 825
+              },
+              "strict": {
+                "f1": 0.7333333333333333,
+                "fn": 224,
+                "fp": 288,
+                "precision": 0.7096774193548387,
+                "recall": 0.7586206896551724,
+                "tp": 704
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.23076923076923075,
+                "fn": 9,
+                "fp": 11,
+                "precision": 0.21428571428571427,
+                "recall": 0.25,
+                "tp": 3
+              },
+              "strict": {
+                "f1": 0.15384615384615383,
+                "fn": 10,
+                "fp": 12,
+                "precision": 0.14285714285714285,
+                "recall": 0.16666666666666666,
+                "tp": 2
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.8445040214477212,
+                "fn": 37,
+                "fp": 79,
+                "precision": 0.799492385786802,
+                "recall": 0.8948863636363636,
+                "tp": 315
+              },
+              "strict": {
+                "f1": 0.7265415549597857,
+                "fn": 81,
+                "fp": 123,
+                "precision": 0.6878172588832487,
+                "recall": 0.7698863636363636,
+                "tp": 271
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.8260869565217391,
+                "fn": 23,
+                "fp": 33,
+                "precision": 0.8012048192771084,
+                "recall": 0.8525641025641025,
+                "tp": 133
+              },
+              "strict": {
+                "f1": 0.6024844720496894,
+                "fn": 59,
+                "fp": 69,
+                "precision": 0.5843373493975904,
+                "recall": 0.6217948717948718,
+                "tp": 97
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.6493506493506495,
+                "fn": 14,
+                "fp": 13,
+                "precision": 0.6578947368421053,
+                "recall": 0.6410256410256411,
+                "tp": 25
+              },
+              "strict": {
+                "f1": 0.4155844155844156,
+                "fn": 23,
+                "fp": 22,
+                "precision": 0.42105263157894735,
+                "recall": 0.41025641025641024,
+                "tp": 16
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.2181818181818182,
+                "fn": 62,
+                "fp": 24,
+                "precision": 0.3333333333333333,
+                "recall": 0.16216216216216217,
+                "tp": 12
+              },
+              "strict": {
+                "f1": 0.16363636363636366,
+                "fn": 65,
+                "fp": 27,
+                "precision": 0.25,
+                "recall": 0.12162162162162163,
+                "tp": 9
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.7816091954022988,
+                "fn": 9,
+                "fp": 10,
+                "precision": 0.7727272727272727,
+                "recall": 0.7906976744186046,
+                "tp": 34
+              },
+              "strict": {
+                "f1": 0.735632183908046,
+                "fn": 11,
+                "fp": 12,
+                "precision": 0.7272727272727273,
+                "recall": 0.7441860465116279,
+                "tp": 32
+              }
+            },
+            "Pregnancy_considerations": {
+              "relaxed": {
+                "f1": 0.3111111111111111,
+                "fn": 5,
+                "fp": 26,
+                "precision": 0.21212121212121213,
+                "recall": 0.5833333333333334,
+                "tp": 7
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 12,
+                "fp": 33,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.681704260651629,
+                "fn": 61,
+                "fp": 66,
+                "precision": 0.6732673267326733,
+                "recall": 0.6903553299492385,
+                "tp": 136
+              },
+              "strict": {
+                "f1": 0.531328320802005,
+                "fn": 91,
+                "fp": 96,
+                "precision": 0.5247524752475248,
+                "recall": 0.5380710659898477,
+                "tp": 106
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.7229254571026724,
+                "fn": 65,
+                "fp": 132,
+                "precision": 0.6606683804627249,
+                "recall": 0.7981366459627329,
+                "tp": 257
+              },
+              "strict": {
+                "f1": 0.5935302390998595,
+                "fn": 111,
+                "fp": 178,
+                "precision": 0.5424164524421594,
+                "recall": 0.65527950310559,
+                "tp": 211
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.8676923076923077,
+                "fn": 23,
+                "fp": 20,
+                "precision": 0.8757763975155279,
+                "recall": 0.8597560975609756,
+                "tp": 141
+              },
+              "strict": {
+                "f1": 0.8123076923076923,
+                "fn": 32,
+                "fp": 29,
+                "precision": 0.8198757763975155,
+                "recall": 0.8048780487804879,
+                "tp": 132
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.7919463087248322,
+            "fn": 411,
+            "fp": 581,
+            "precision": 0.7646820575131632,
+            "recall": 0.8212266202696825,
+            "tp": 1888
+          },
+          "strict": {
+            "f1": 0.662751677852349,
+            "fn": 719,
+            "fp": 889,
+            "precision": 0.639935196435804,
+            "recall": 0.6872553284036538,
+            "tp": 1580
+          }
+        },
+        "inclusion": {
+          "per_type": {
+            "Condition": {
+              "relaxed": {
+                "f1": 0.7565337001375515,
+                "fn": 77,
+                "fp": 100,
+                "precision": 0.7333333333333333,
+                "recall": 0.78125,
+                "tp": 275
+              },
+              "strict": {
+                "f1": 0.5639614855570839,
+                "fn": 147,
+                "fp": 170,
+                "precision": 0.5466666666666666,
+                "recall": 0.5823863636363636,
+                "tp": 205
+              }
+            },
+            "Device": {
+              "relaxed": {
+                "f1": 0.5,
+                "fn": 5,
+                "fp": 9,
+                "precision": 0.4375,
+                "recall": 0.5833333333333334,
+                "tp": 7
+              },
+              "strict": {
+                "f1": 0.28571428571428575,
+                "fn": 8,
+                "fp": 12,
+                "precision": 0.25,
+                "recall": 0.3333333333333333,
+                "tp": 4
+              }
+            },
+            "Drug": {
+              "relaxed": {
+                "f1": 0.591304347826087,
+                "fn": 10,
+                "fp": 37,
+                "precision": 0.4788732394366197,
+                "recall": 0.7727272727272727,
+                "tp": 34
+              },
+              "strict": {
+                "f1": 0.4695652173913043,
+                "fn": 17,
+                "fp": 44,
+                "precision": 0.38028169014084506,
+                "recall": 0.6136363636363636,
+                "tp": 27
+              }
+            },
+            "Measurement": {
+              "relaxed": {
+                "f1": 0.7505938242280285,
+                "fn": 40,
+                "fp": 65,
+                "precision": 0.7085201793721974,
+                "recall": 0.797979797979798,
+                "tp": 158
+              },
+              "strict": {
+                "f1": 0.5605700712589073,
+                "fn": 80,
+                "fp": 105,
+                "precision": 0.5291479820627802,
+                "recall": 0.5959595959595959,
+                "tp": 118
+              }
+            },
+            "Mood": {
+              "relaxed": {
+                "f1": 0.4782608695652174,
+                "fn": 13,
+                "fp": 11,
+                "precision": 0.5,
+                "recall": 0.4583333333333333,
+                "tp": 11
+              },
+              "strict": {
+                "f1": 0.30434782608695654,
+                "fn": 17,
+                "fp": 15,
+                "precision": 0.3181818181818182,
+                "recall": 0.2916666666666667,
+                "tp": 7
+              }
+            },
+            "Observation": {
+              "relaxed": {
+                "f1": 0.18666666666666665,
+                "fn": 50,
+                "fp": 11,
+                "precision": 0.3888888888888889,
+                "recall": 0.12280701754385964,
+                "tp": 7
+              },
+              "strict": {
+                "f1": 0.16,
+                "fn": 51,
+                "fp": 12,
+                "precision": 0.3333333333333333,
+                "recall": 0.10526315789473684,
+                "tp": 6
+              }
+            },
+            "Person": {
+              "relaxed": {
+                "f1": 0.8652482269503545,
+                "fn": 21,
+                "fp": 17,
+                "precision": 0.8776978417266187,
+                "recall": 0.8531468531468531,
+                "tp": 122
+              },
+              "strict": {
+                "f1": 0.8297872340425533,
+                "fn": 26,
+                "fp": 22,
+                "precision": 0.841726618705036,
+                "recall": 0.8181818181818182,
+                "tp": 117
+              }
+            },
+            "Pregnancy_considerations": {
+              "relaxed": {
+                "f1": 0.09022556390977444,
+                "fn": 1,
+                "fp": 120,
+                "precision": 0.047619047619047616,
+                "recall": 0.8571428571428571,
+                "tp": 6
+              },
+              "strict": {
+                "f1": 0.0,
+                "fn": 7,
+                "fp": 126,
+                "precision": 0.0,
+                "recall": 0.0,
+                "tp": 0
+              }
+            },
+            "Procedure": {
+              "relaxed": {
+                "f1": 0.6807387862796834,
+                "fn": 45,
+                "fp": 76,
+                "precision": 0.6292682926829268,
+                "recall": 0.7413793103448276,
+                "tp": 129
+              },
+              "strict": {
+                "f1": 0.5646437994722955,
+                "fn": 67,
+                "fp": 98,
+                "precision": 0.5219512195121951,
+                "recall": 0.6149425287356322,
+                "tp": 107
+              }
+            },
+            "Temporal": {
+              "relaxed": {
+                "f1": 0.632996632996633,
+                "fn": 40,
+                "fp": 69,
+                "precision": 0.5766871165644172,
+                "recall": 0.7014925373134329,
+                "tp": 94
+              },
+              "strict": {
+                "f1": 0.35690235690235683,
+                "fn": 81,
+                "fp": 110,
+                "precision": 0.32515337423312884,
+                "recall": 0.39552238805970147,
+                "tp": 53
+              }
+            },
+            "Value": {
+              "relaxed": {
+                "f1": 0.8588235294117647,
+                "fn": 23,
+                "fp": 49,
+                "precision": 0.8171641791044776,
+                "recall": 0.9049586776859504,
+                "tp": 219
+              },
+              "strict": {
+                "f1": 0.7254901960784313,
+                "fn": 57,
+                "fp": 83,
+                "precision": 0.6902985074626866,
+                "recall": 0.7644628099173554,
+                "tp": 185
+              }
+            }
+          },
+          "relaxed": {
+            "f1": 0.7049452373050117,
+            "fn": 325,
+            "fp": 564,
+            "precision": 0.6531365313653137,
+            "recall": 0.7656813266041816,
+            "tp": 1062
+          },
+          "strict": {
+            "f1": 0.5502821108529704,
+            "fn": 558,
+            "fp": 797,
+            "precision": 0.509840098400984,
+            "recall": 0.5976928622927181,
+            "tp": 829
+          }
+        }
+      },
+      "per_type": {
+        "Condition": {
+          "relaxed": {
+            "f1": 0.831129580657348,
+            "fn": 180,
+            "fp": 267,
+            "precision": 0.8046817849305048,
+            "recall": 0.859375,
+            "tp": 1100
+          },
+          "strict": {
+            "f1": 0.6868152625613904,
+            "fn": 371,
+            "fp": 458,
+            "precision": 0.6649597659107535,
+            "recall": 0.71015625,
+            "tp": 909
+          }
+        },
+        "Device": {
+          "relaxed": {
+            "f1": 0.3703703703703704,
+            "fn": 14,
+            "fp": 20,
+            "precision": 0.3333333333333333,
+            "recall": 0.4166666666666667,
+            "tp": 10
+          },
+          "strict": {
+            "f1": 0.22222222222222224,
+            "fn": 18,
+            "fp": 24,
+            "precision": 0.2,
+            "recall": 0.25,
+            "tp": 6
+          }
+        },
+        "Drug": {
+          "relaxed": {
+            "f1": 0.81068524970964,
+            "fn": 47,
+            "fp": 116,
+            "precision": 0.7505376344086021,
+            "recall": 0.8813131313131313,
+            "tp": 349
+          },
+          "strict": {
+            "f1": 0.6922183507549362,
+            "fn": 98,
+            "fp": 167,
+            "precision": 0.6408602150537634,
+            "recall": 0.7525252525252525,
+            "tp": 298
+          }
+        },
+        "Measurement": {
+          "relaxed": {
+            "f1": 0.7833109017496636,
+            "fn": 63,
+            "fp": 98,
+            "precision": 0.7480719794344473,
+            "recall": 0.8220338983050848,
+            "tp": 291
+          },
+          "strict": {
+            "f1": 0.5787348586810229,
+            "fn": 139,
+            "fp": 174,
+            "precision": 0.5526992287917738,
+            "recall": 0.6073446327683616,
+            "tp": 215
+          }
+        },
+        "Mood": {
+          "relaxed": {
+            "f1": 0.5853658536585366,
+            "fn": 27,
+            "fp": 24,
+            "precision": 0.6,
+            "recall": 0.5714285714285714,
+            "tp": 36
+          },
+          "strict": {
+            "f1": 0.3739837398373984,
+            "fn": 40,
+            "fp": 37,
+            "precision": 0.38333333333333336,
+            "recall": 0.36507936507936506,
+            "tp": 23
+          }
+        },
+        "Observation": {
+          "relaxed": {
+            "f1": 0.2054054054054054,
+            "fn": 112,
+            "fp": 35,
+            "precision": 0.35185185185185186,
+            "recall": 0.1450381679389313,
+            "tp": 19
+          },
+          "strict": {
+            "f1": 0.16216216216216217,
+            "fn": 116,
+            "fp": 39,
+            "precision": 0.2777777777777778,
+            "recall": 0.11450381679389313,
+            "tp": 15
+          }
+        },
+        "Person": {
+          "relaxed": {
+            "f1": 0.8455284552845529,
+            "fn": 30,
+            "fp": 27,
+            "precision": 0.8524590163934426,
+            "recall": 0.8387096774193549,
+            "tp": 156
+          },
+          "strict": {
+            "f1": 0.8075880758807588,
+            "fn": 37,
+            "fp": 34,
+            "precision": 0.8142076502732241,
+            "recall": 0.8010752688172043,
+            "tp": 149
+          }
+        },
+        "Pregnancy_considerations": {
+          "relaxed": {
+            "f1": 0.14606741573033707,
+            "fn": 6,
+            "fp": 146,
+            "precision": 0.08176100628930817,
+            "recall": 0.6842105263157895,
+            "tp": 13
+          },
+          "strict": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 159,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0
+          }
+        },
+        "Procedure": {
+          "relaxed": {
+            "f1": 0.6812339331619538,
+            "fn": 106,
+            "fp": 142,
+            "precision": 0.6511056511056511,
+            "recall": 0.7142857142857143,
+            "tp": 265
+          },
+          "strict": {
+            "f1": 0.5475578406169666,
+            "fn": 158,
+            "fp": 194,
+            "precision": 0.5233415233415234,
+            "recall": 0.5741239892183289,
+            "tp": 213
+          }
+        },
+        "Temporal": {
+          "relaxed": {
+            "f1": 0.6964285714285715,
+            "fn": 105,
+            "fp": 201,
+            "precision": 0.6358695652173914,
+            "recall": 0.7697368421052632,
+            "tp": 351
+          },
+          "strict": {
+            "f1": 0.5238095238095238,
+            "fn": 192,
+            "fp": 288,
+            "precision": 0.4782608695652174,
+            "recall": 0.5789473684210527,
+            "tp": 264
+          }
+        },
+        "Value": {
+          "relaxed": {
+            "f1": 0.8622754491017964,
+            "fn": 46,
+            "fp": 69,
+            "precision": 0.8391608391608392,
+            "recall": 0.8866995073891626,
+            "tp": 360
+          },
+          "strict": {
+            "f1": 0.7592814371257486,
+            "fn": 89,
+            "fp": 112,
+            "precision": 0.7389277389277389,
+            "recall": 0.7807881773399015,
+            "tp": 317
+          }
+        }
+      },
+      "relaxed": {
+        "f1": 0.7582572934070171,
+        "fn": 736,
+        "fp": 1145,
+        "precision": 0.7203907203907204,
+        "recall": 0.8003255561584374,
+        "tp": 2950
+      },
+      "strict": {
+        "f1": 0.6192006168872894,
+        "fn": 1277,
+        "fp": 1686,
+        "precision": 0.5882783882783883,
+        "recall": 0.6535539880629408,
+        "tp": 2409
+      }
+    },
+    "prediction_seconds": 18.461252399953082,
+    "tokenizer_revision_expected": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "window_audit": {
+      "bio_label_counts": {
+        "B-Condition": 1280,
+        "B-Device": 24,
+        "B-Drug": 396,
+        "B-Measurement": 354,
+        "B-Mood": 63,
+        "B-Observation": 131,
+        "B-Person": 186,
+        "B-Pregnancy_considerations": 19,
+        "B-Procedure": 371,
+        "B-Temporal": 456,
+        "B-Value": 406,
+        "I-Condition": 2857,
+        "I-Device": 46,
+        "I-Drug": 1111,
+        "I-Measurement": 1126,
+        "I-Mood": 47,
+        "I-Observation": 316,
+        "I-Person": 26,
+        "I-Pregnancy_considerations": 525,
+        "I-Procedure": 814,
+        "I-Temporal": 1358,
+        "I-Value": 1212,
+        "O": 12935
+      },
+      "criterion_count": 1310,
+      "ignored_special_token_count": 2626,
+      "maximum_window_length": 128,
+      "maximum_windows_per_criterion": 2,
+      "overflow_criterion_count": 3,
+      "supervised_token_count": 26059,
+      "window_count": 1313
+    }
+  },
+  "environment": {
+    "cuda": "12.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "torch": "2.13.0+cu126"
+  },
+  "run_type": "locked_test_evaluation",
+  "seed": 42,
+  "split_seed": 42,
+  "test_split": {
+    "criterion_count": 1310,
+    "entity_count": 3524,
+    "nct_id_count": 100
+  },
+  "training_performed": false
+}

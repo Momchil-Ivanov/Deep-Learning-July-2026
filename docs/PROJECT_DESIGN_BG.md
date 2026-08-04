@@ -296,6 +296,30 @@ test оценка е следващият етап.
 
 Подробният отчет е в `artifacts/distilbert_training_metrics.json`.
 
+## 7.3. Locked test comparison
+
+След избор на най-добрия DistilBERT checkpoint по validation беше извършена
+еднократна оценка върху locked test set (100 NCT IDs, 1 310 criteria). Не е
+правено допълнително обучение или настройване по test резултата.
+
+Резултати:
+
+- CRF: strict F1 `0.5884`, relaxed F1 `0.7275`;
+- DistilBERT: strict F1 `0.6192`, relaxed F1 `0.7583`;
+- разлика: `+0.0308` strict и `+0.0307` relaxed в полза на DistilBERT;
+- inclusion strict F1: CRF `0.5410`, DistilBERT `0.5503`;
+- exclusion strict F1: CRF `0.6167`, DistilBERT `0.6628`.
+
+Краткият error analysis показва, че DistilBERT намалява пропуснатите entities
+(`610` срещу `1 068` при CRF), но прави повече spurious predictions (`1 019`
+срещу `570`). Boundary errors остават чести и за двата модела. Пълният JSON
+отчет с per-type метрики и примерни грешки е в
+`artifacts/test_evaluation.json`.
+
+Тези резултати потвърждават изследователския въпрос: компактният DistilBERT
+разпознава медицинските понятия в eligibility criteria по-точно от класическия
+CRF върху същия held-out test set.
+
 ## 8. Поетапна работа и quality gates
 
 Не преминаваме към следващ етап, докато текущият не е проверен.
