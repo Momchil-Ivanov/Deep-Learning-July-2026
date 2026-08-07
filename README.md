@@ -146,7 +146,9 @@ test split. It performs no additional training.
 .
 ├── artifacts/                 # Small reproducible outputs; model files ignored
 ├── docs/
-│   └── PROJECT_DESIGN_BG.md   # Detailed Bulgarian design explanation
+│   └── PROJECT_DESIGN.md      # Detailed English design explanation
+├── notebooks/
+│   └── TrialCriteriaNER.ipynb # Exam-facing research notebook
 ├── scripts/
 │   ├── audit_chia.py           # Reproducible data-quality audit
 │   ├── prepare_chia.py         # Split, overlap, and BIO quality gate
@@ -169,7 +171,8 @@ test split. It performs no additional training.
 └── requirements.txt
 ```
 
-The experiment notebook and final reproducibility pass follow after Stage 8.
+Open [`notebooks/TrialCriteriaNER.ipynb`](notebooks/TrialCriteriaNER.ipynb) for the
+exam-facing research narrative, plots, and conclusion.
 
 ## Current status
 
@@ -262,11 +265,22 @@ Stage 8 is complete:
 The comparison report is stored in
 [`artifacts/test_evaluation.json`](artifacts/test_evaluation.json).
 
+Stage 9 is complete:
+
+- exam-facing notebook `notebooks/TrialCriteriaNER.ipynb` summarizes the
+  problem, data, models, plots, previous-research comparison, and conclusion;
+- DistilBERT answers the research question positively on the locked test set
+  (`0.6192` vs CRF `0.5884` strict F1);
+- unit/regression tests and notebook integrity checks pass.
+
 ## Documentation
 
-See [docs/PROJECT_DESIGN_BG.md](docs/PROJECT_DESIGN_BG.md) for the detailed
+See [docs/PROJECT_DESIGN.md](docs/PROJECT_DESIGN.md) for the detailed
 motivation, architecture, training plan, evaluation strategy, limitations, and
-checkpoint portability notes in Bulgarian.
+checkpoint portability notes.
+
+Start with the notebook for the graded research narrative:
+[notebooks/TrialCriteriaNER.ipynb](notebooks/TrialCriteriaNER.ipynb).
 
 ## Primary references
 
