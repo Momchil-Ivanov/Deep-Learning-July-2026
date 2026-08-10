@@ -96,6 +96,34 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
+## Quick examiner verification
+
+The following commands verify a fresh clone without retraining the full models:
+
+```powershell
+$env:PYTHONPATH="src"
+$env:PYTHONUTF8="1"
+
+python -m pip check
+python -m pytest
+
+python -m nbconvert `
+  --to notebook `
+  --execute notebooks\TrialCriteriaNER.ipynb `
+  --output TrialCriteriaNER.verified.ipynb `
+  --output-dir artifacts `
+  --ExecutePreprocessor.timeout=300
+```
+
+Expected results:
+
+- `24 passed` from `pytest`;
+- `Writing ... artifacts\TrialCriteriaNER.verified.ipynb` from `nbconvert`.
+
+The committed notebook already contains outputs, plots, and locked experiment
+metrics. Its live DistilBERT demonstration is skipped safely when the local best
+checkpoint is absent.
+
 Verify CUDA:
 
 ```powershell
@@ -104,7 +132,9 @@ python -c "import torch; print(torch.__version__); print(torch.cuda.is_available
 
 Expected GPU output includes `True` and `NVIDIA GeForce GTX 1050 Ti`.
 
-Run the data audit:
+## Full experiment reproduction
+
+Run the complete pipeline in this order:
 
 ```powershell
 $env:PYTHONPATH="src"
@@ -138,7 +168,13 @@ epoch, keeps the best checkpoint by validation strict F1, and supports
 unused until Stage 8.
 
 `evaluate_test.py` is the one-shot Stage 8 comparison on the locked 100-trial
-test split. It performs no additional training.
+test split. It performs no additional training, but it requires the CRF and
+DistilBERT checkpoints created by the two preceding full-training commands.
+
+Model checkpoints are intentionally excluded from Git because the DistilBERT
+weights exceed GitHub's file-size limit. Therefore, a fresh clone can run the
+tests and notebook immediately, while exact prediction regeneration requires
+full training (about 52 minutes on the verified GTX 1050 Ti).
 
 ## Repository structure
 
