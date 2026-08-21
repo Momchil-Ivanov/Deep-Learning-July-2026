@@ -9,6 +9,7 @@ __pycache__/
 data/
 checkpoints/
 artifacts/models/
+artifacts/TrialCriteriaNER.verified.ipynb
 .cache/
 
 # Environment files and local IDE settings
@@ -16,5 +17,4 @@ artifacts/models/
 .vscode/
 .idea/
 
-*.egg-info/
 *.egg-info/
