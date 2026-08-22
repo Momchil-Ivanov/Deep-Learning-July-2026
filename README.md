@@ -1,5 +1,7 @@
 # TrialCriteriaNER
 
+[![Verify submission](https://github.com/Momchil-Ivanov/Deep-Learning-July-2026/actions/workflows/verify.yml/badge.svg?branch=clinical-trial-ner)](https://github.com/Momchil-Ivanov/Deep-Learning-July-2026/actions/workflows/verify.yml)
+
 Structuring clinical-trial eligibility criteria with transformer-based named
 entity recognition.
 
@@ -106,6 +108,7 @@ $env:PYTHONUTF8="1"
 
 python -m pip check
 python -m pytest
+python scripts\verify_submission.py
 
 python -m nbconvert `
   --to notebook `
@@ -117,12 +120,22 @@ python -m nbconvert `
 
 Expected results:
 
-- `24 passed` from `pytest`;
+- all tests pass;
+- the submission validator reports `"status": "ok"`;
 - `Writing ... artifacts\TrialCriteriaNER.verified.ipynb` from `nbconvert`.
 
 The committed notebook already contains outputs, plots, and locked experiment
 metrics. Its live DistilBERT demonstration is skipped safely when the local best
 checkpoint is absent.
+
+See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for a complete
+clean-clone walkthrough, CPU-only checks, expected results, full retraining, and
+checkpoint portability.
+
+The GitHub Actions workflow repeats the unit tests and offline submission
+validation on a CPU runner for every push and pull request. Its smaller
+`requirements-ci.txt` intentionally excludes notebook, plotting, data-analysis,
+and CUDA-only training packages.
 
 Verify CUDA:
 
@@ -180,9 +193,12 @@ full training (about 52 minutes on the verified GTX 1050 Ti).
 
 ```text
 .
+├── .github/
+│   └── workflows/verify.yml   # CPU tests and submission validation
 ├── artifacts/                 # Small reproducible outputs; model files ignored
 ├── docs/
-│   └── PROJECT_DESIGN.md      # Detailed English design explanation
+│   ├── PROJECT_DESIGN.md      # Detailed English design explanation
+│   └── REPRODUCIBILITY.md     # Clean-clone and full reproduction guide
 ├── notebooks/
 │   └── TrialCriteriaNER.ipynb # Exam-facing research notebook
 ├── scripts/
@@ -191,19 +207,22 @@ full training (about 52 minutes on the verified GTX 1050 Ti).
 │   ├── train_crf.py            # CRF smoke/full training and evaluation
 │   ├── smoke_distilbert.py     # DistilBERT CUDA / resume quality gate
 │   ├── train_distilbert.py     # Full DistilBERT training + early stopping
-│   └── evaluate_test.py        # One-shot locked test comparison
+│   ├── evaluate_test.py        # One-shot locked test comparison
+│   └── verify_submission.py    # Offline artifact/notebook consistency gate
 ├── src/
 │   └── trial_criteria_ner/
 │       ├── baseline.py         # CRF features and entity-level metrics
 │       ├── data.py             # CHIA download, parsing, and audit
 │       ├── error_analysis.py   # Boundary/type/miss/spurious buckets
 │       ├── preprocessing.py    # Splits, overlap policy, and BIO alignment
+│       ├── submission.py       # Committed evidence validation
 │       ├── transformer_data.py # Windowed DistilBERT BIO inputs
 │       └── transformer_train.py# Train/eval/checkpoint helpers
 ├── tests/                     # Unit and data-integrity tests
 ├── .gitignore
 ├── pyproject.toml
 ├── README.md
+├── requirements-ci.txt        # Minimal CPU verification environment
 └── requirements.txt
 ```
 
